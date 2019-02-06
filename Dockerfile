@@ -33,7 +33,7 @@ ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
 RUN pyenv install 3.6.4
 RUN pyenv global 3.6.4
 
-RUN pip install numpy tensorflow-gpu keras scikit-learn jupyter opencv-python opencv-contrib-python
+RUN pip install numpy tensorflow-gpu keras scikit-learn jupyter opencv-python opencv-contrib-python jupyter-tensorboard
 RUN jupyter notebook --generate-config
 RUN echo "c.NotebookApp.ip = '0.0.0.0'" >> /.jupyter/jupyter_notebook_config.py
 RUN echo "c.NotebookApp.token = ''" >> /.jupyter/jupyter_notebook_config.py
