@@ -37,3 +37,4 @@ RUN pip install numpy tensorflow-gpu keras scikit-learn jupyter opencv-python op
 RUN jupyter notebook --generate-config
 RUN echo "c.NotebookApp.ip = '0.0.0.0'" >> /.jupyter/jupyter_notebook_config.py
 RUN echo "c.NotebookApp.token = ''" >> /.jupyter/jupyter_notebook_config.py
+RUN echo "c.NotebookApp.allow_root = True" >> /.jupyter/jupyter_notebook_config.py
