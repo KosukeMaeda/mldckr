@@ -37,6 +37,6 @@ RUN pyenv install 3.6.4 && pyenv global 3.6.4
 
 RUN pip install numpy tensorflow-gpu keras scikit-learn jupyter opencv-python opencv-contrib-python jupyter-tensorboard pipenv
 RUN jupyter notebook --generate-config \
- && echo c.NotebookApp.ip = '0.0.0.0' >> /.jupyter/jupyter_notebook_config.py \
- && echo c.NotebookApp.token = '' >> /.jupyter/jupyter_notebook_config.py \
- && echo c.NotebookApp.allow_root = True >> /.jupyter/jupyter_notebook_config.py
+ && echo "c.NotebookApp.ip = '0.0.0.0'" >> /.jupyter/jupyter_notebook_config.py \
+ && echo "c.NotebookApp.token = ''" >> /.jupyter/jupyter_notebook_config.py \
+ && echo "c.NotebookApp.allow_root = True" >> /.jupyter/jupyter_notebook_config.py
