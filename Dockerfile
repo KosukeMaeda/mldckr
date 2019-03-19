@@ -1,4 +1,4 @@
-FROM nvidia/cuda:9.0-cudnn7-runtime
+FROM nvidia/cuda:10.0-cudnn7-runtime
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
         build-essential \
@@ -22,7 +22,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         xz-utils \
         zlib1g-dev \
         emacs \
- && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+ && apt-get clean &&  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN git clone git://github.com/yyuu/pyenv.git .pyenv
 RUN git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
