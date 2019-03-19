@@ -1,5 +1,5 @@
 FROM nvidia/cuda:10.0-cudnn7-runtime
-
+ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y --no-install-recommends \
         build-essential \
         ca-certificates \
