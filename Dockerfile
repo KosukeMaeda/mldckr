@@ -21,6 +21,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         wget \
         xz-utils \
         zlib1g-dev \
+        emacs \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN git clone git://github.com/yyuu/pyenv.git .pyenv
@@ -29,6 +30,8 @@ RUN git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyen
 ENV HOME  /
 ENV PYENV_ROOT $HOME/.pyenv
 ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
+ENV LC_ALL C.UTF-8
+ENV LANG C.UTF-8
 
 RUN pyenv install 3.6.4 && pyenv global 3.6.4
 
